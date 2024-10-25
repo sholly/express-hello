@@ -16,10 +16,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ gitea.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: NPM Install
         uses: actions/setup-node@v4
         with: 
           node-version: 20
       - run: npm install --loglevel=verbose
+      - run: echo "🍏 This job's status is ${{ job.status }}."
 
