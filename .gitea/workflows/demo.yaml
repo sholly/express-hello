@@ -3,7 +3,7 @@ run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
 on: [push]
 
 jobs:
-  Explore-Gitea-Actions:
+  Build-Express-Hello:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ gitea.event_name }} event."
@@ -17,3 +17,9 @@ jobs:
         run: |
           ls ${{ gitea.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: NPM Install
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
+      - run: npm install
+
