@@ -18,7 +18,7 @@ jobs:
     needs: Build-Express-Hello
     if: gitea.ref == 'refs/heads/main'
     steps:
-      - uses: https://github.com/actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Set up Docker Buildx
         uses: https://github.com/docker/setup-buildx-action@v3
         with:
