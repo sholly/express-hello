@@ -25,7 +25,7 @@ jobs:
         uses: https://github.com/docker/setup-buildx-action@v3
         with:
           config-inline: |
-            git.lab.unixnerd.org:5000
+            git.lab.unixnerd.org
               http = true
               insecure = true
       - name: Build and push Docker image
