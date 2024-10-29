@@ -3,3 +3,4 @@ in the UI.
 
 The config-inline bits appear to be good for allowing insecure registries
 
+test build
