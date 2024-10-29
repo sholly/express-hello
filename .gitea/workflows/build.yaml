@@ -14,7 +14,7 @@ jobs:
           node-version: 20
       - run: npm install --loglevel=verbose
   Build-Express-Image:
-    runs-on: cth-ubuntu-latest
+    runs-on: ubuntu-latest
     needs: Build-Express-Hello
     if: gitea.ref == 'refs/heads/main'
     steps:
