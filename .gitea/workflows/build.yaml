@@ -13,7 +13,7 @@ jobs:
         with: 
           node-version: 20
       - run: npm install --loglevel=verbose
-  Build-Express-Image:
+  Build-Express-Image-Gitea:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/catthehacker/ubuntu:act-latest
@@ -29,11 +29,17 @@ jobs:
           registry: git.lab.unixnerd.org
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Login to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GH_USER }}
+          password: ${{ secrets.GH_PAT }}
       - name: Build and push Docker image
         uses: https://github.com/docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: "git.lab.unixnerd.org/sholly/express-hello:${{gitea.sha}},git.lab.unixnerd.org/sholly/express-hello:latest"
+          tags: "ghcr.io/sholly/express-hello:latest,git.lab.unixnerd.org/sholly/express-hello:${{gitea.sha}},git.lab.unixnerd.org/sholly/express-hello:latest"
 
