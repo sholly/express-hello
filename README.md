@@ -1,11 +1,2 @@
-need a readme yo
-yes
-more
-test
-test2
-test the build
-test the build
-test the build
-
-
-testing again
+This needs to have the gitea username and password added as secrets
+in the UI.
