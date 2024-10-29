@@ -29,5 +29,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: "git.lab.unixnerd.org/express-hello:${{gitea.sha}},git.lab.unixnerd.org/express-hello:latest"
+          tags: "git.lab.unixnerd.org/sholly/express-hello:${{gitea.sha}},git.lab.unixnerd.org/sholly/express-hello:latest"
 
